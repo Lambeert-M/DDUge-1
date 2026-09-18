@@ -25,6 +25,7 @@ func _try_move (dir: Vector2, raycast: RayCast2D) -> void:
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider and collider.has_method("push_block"):
+			$Sprite2D.play("push")
 			collider.push_block(dir, raycast)
 		return
 	_move(dir)
@@ -44,6 +45,8 @@ func _process(delta: float) -> void:
 	# Checks if "r" is pressed
 	if Input.is_key_pressed(KEY_R):
 		Levels.reset_level()
+
+
 
 func kill() -> void:
 	print("Killed")

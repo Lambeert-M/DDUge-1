@@ -1,12 +1,74 @@
 [gd_scene format=3 uid="uid://deqsm08qqq4sc"]
 
 [ext_resource type="Script" uid="uid://dlj3mgbnc1pkk" path="res://Scripts/character_body_2d.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://copsvf5n6houk" path="res://Resources/Sprites/Character_sprites/Guy/guy_push.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54cwd"]
 size = Vector2(8, 8)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rpqav"]
-load_path = "res://.godot/imported/Guy.png-caf64eda3dde57b4f792510c0691ddb2.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn08x"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52ee3"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhhdu"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_megsn"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoq75"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpqav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ixxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn08x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52ee3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhhdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_megsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoq75")
+}],
+"loop": 0,
+"name": &"push",
+"speed": 24.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
 size = Vector2(8, 8)
@@ -23,9 +85,10 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=670079430]
 shape = SubResource("RectangleShape2D_54cwd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=851114173]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1695016832]
 position = Vector2(-7.1525574e-07, -1.3113022e-06)
-texture = SubResource("CompressedTexture2D_rpqav")
+sprite_frames = SubResource("SpriteFrames_rpqav")
+animation = &"push"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1153557629]
 shape = SubResource("RectangleShape2D_qnpof")
